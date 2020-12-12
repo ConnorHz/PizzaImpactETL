@@ -8,7 +8,7 @@ Are your local pizza joints effecting the health of your community? With the dat
     - This dataset from Datafiniti is a list of over 3,500 pizzas from multiple restaurants across the US.
 
 - [Adult Obesity Rate by State, 2019](https://stateofchildhoodobesity.org/adult-obesity/)
-    - This dataset from [StateofChildhoodObesity.org] includes the adult obesity rates of each state from 2019
+    - This dataset from [StateofChildhoodObesity.org](https://stateofchildhoodobesity.org/) includes the adult obesity rates of each state from 2019
         - (according to data from the [Behavioral Risk Factor Surveillance System](https://www.cdc.gov/brfss/index.html))
 
 # ETL Process
