@@ -87,6 +87,7 @@ meta = MetaData()
 # Create pizza table if it doesn't exist
 pizza_table = Table(
    'pizza', meta,
+   Column('id', Integer, primary_key=True),
    Column('state', String), 
    Column('price', Float),
    Column('menu_item', String),
@@ -98,6 +99,7 @@ pizza_table.create(engine, checkfirst=True)
 # Create obesity table if it doesn't exist
 obesity_table = Table(
    'obesity', meta,
+   Column('id', Integer, primary_key=True),
    Column('state_name', String), 
    Column('state', String),
    Column('rate', Float)
