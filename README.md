@@ -15,7 +15,7 @@ Are your local pizza joints effecting the health of your community? With the dat
 
 ## **Extract**
 
-To extract the pizza menu data, we first downloaded the csv file from Datafiniti. We then used Pandas to read the CSV into a data frame and begin the Transformation process.
+To extract the pizza menu data, we first downloaded the csv file from [Datafiniti](https://data.world/datafiniti/pizza-restaurants-and-pizzas-on-their-menus). We then used Pandas to read the [CSV](pizza_file.csv) into a data frame and begin the Transformation process.
 
 We scraped the obesity data from the stateofchildhooobesity.org using python, splinter, and beautiful soup.
 
