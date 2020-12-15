@@ -5,13 +5,14 @@ import pandas as pd
 from config import chromedriverpath, pw
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float
 from sqlalchemy.orm import Session
+from sqlalchemy.ext.automap import automap_base
 import sqlalchemy_utils as utils
 
 
 ###START OF OBESITY DATA
 #Path for splinter
 executable_path = {'executable_path': chromedriverpath}
-browser = Browser('chrome', **executable_path, headless=False)
+browser = Browser('chrome', **executable_path, headless=True)
 
 #Grab HTML data
 url = 'https://stateofchildhoodobesity.org/adult-obesity/'
@@ -105,16 +106,27 @@ obesity_table.create(engine, checkfirst=True)
 
 conn.close()
 
+Base = automap_base()
+
+Base.prepare(engine, reflect=True)
+
+tbl_pizza = Base.classes.pizza
+tbl_obesity = Base.classes.obesity
+
 ###END OF POSTGRESQL TABLE CREATION
 ###START OF POSTGRESQL DATA IMPORTING
+session = Session(bind=engine)
+
+# Load pizza table
 for index, row in pizza_df.iterrows():
-    pizza = pizza_table(state=row.state, price=row.price, menu_item=row.menu_item, store_name=row.store_name)
+    pizza = tbl_pizza(state=row.state, price=row.price, menu_item=row.menu_item, store_name=row.store_name)
     session.add(pizza)
 
 # Load obesity table
 for index, row in obesity_df.iterrows():
-    obesity = obesity_table(state=row.state, state_name=row.state_name, rate=row.rate)
+    obesity = tbl_obesity(state=row.state, state_name=row.state_name, rate=row.rate)
     session.add(obesity)
 
 session.commit()
+session.close()
 ###END OF POSTGRESQL DATA IMPORTING
