@@ -15,12 +15,18 @@ Are your local pizza joints effecting the health of your community? With the dat
 
 ## **Extract**
 
-Here is where we talk about the extraction process
+To extract the pizza menu data, we first downloaded the csv file from Datafiniti. We then used Pandas to read the CSV into a data frame and begin the Transformation process.
+
+We scraped the obesity data from the stateofchildhooobesity.org using python, splinter, and beautiful soup.
 
 ### **Transform**
 
-Here is where we talk about the transformation process
+Once the pizza menu data frame was created, we removed the columns we didn’t need from the data frame. We then reduced the data frame to only include U.S. currency and locations.
+
+
+Once we imported the obesity data, we used strip to remove unwanted spaces. Since the state names we had included a character from the span, we checked the span length to eliminate the unwanted character. We then pulled the state abbreviation from the tag and made it upper case. For the obesity rates, we removed line breaks and percentages by using the replace function.
+
 
 ### **Load**
 
-Here is where we talk about the load process
+To load our data, we first connected to the postgres server. We then used an if statement to create our database if it wasn't already present. Then we created both tables if they didn't already exist. Finally, we iterated through each data frame, loading them into their respective tables.
