@@ -3,6 +3,10 @@ from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 from config import chromedriverpath, pw
+from sqlalchemy import create_engine, inspect, func
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
 
 
 ###START OF OBESITY DATA
@@ -60,7 +64,11 @@ clean_pizza.rename(columns={
     "menus.name":"menu_item",
     "name":"store_name"
 },inplace=True)
- 
-
-
 ###END OF PIZZA DATA
+
+###START OF POSTGRESQL TABLE CREATION
+
+###END OF POSTGRESQL TABLE CREATION
+###START OF POSTGRESQL DATE IMPORTING
+
+###END OF POSTGRESQL DATE IMPORTING
