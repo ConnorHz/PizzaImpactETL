@@ -6,7 +6,7 @@ With the data gathered in this project we are able to investigate the correlatio
 # Data Sources
 
 - [Pizza Restaurants and their Pizzas](https://data.world/datafiniti/pizza-restaurants-and-pizzas-on-their-menus)
-    - This dataset from Datafiniti is a list of 10,00 pizzas from a wide variety of restaurants across the United States.
+    - This dataset from Datafiniti is a list of 10,000 pizzas from a wide variety of restaurants across the United States.
 
 - [Adult Obesity Rate by State, 2019](https://stateofchildhoodobesity.org/adult-obesity/)
     - This dataset from [stateofchildhoodobesity.org](https://stateofchildhoodobesity.org/) includes the adult obesity rates of each state from 2019
